@@ -40,6 +40,7 @@
             height: 200px;
             background-size: 350px;
             position: relative;
+            cursor: pointer;
         }
 
         .footer {
@@ -83,7 +84,7 @@
         bottom: 0;
         transform: translate(-50%);
         left: 50%;
-
+        opacity: 0;
 
         width: fit-content;
         padding: 0 20px;
@@ -93,26 +94,65 @@
         }
 
     </style>
+    <script>
+
+    function showText(number) {
+      if (number === 1) {
+        document.querySelector("#desc1").classList.remove("hideText");
+        document.querySelector("#desc1").classList.add("showText");
+      } else if (number === 2) {
+        document.querySelector("#desc2").classList.remove("hideText");
+        document.querySelector("#desc2").classList.add("showText");
+      } else {
+        document.querySelector("#desc3").classList.remove("hideText");
+        document.querySelector("#desc3").classList.add("showText");
+      }
+    }
+
+    function hideText(number) {
+      if (number === 1) {
+        document.querySelector("#desc1").classList.remove("showText");
+        document.querySelector("#desc1").classList.add("hideText");
+      } else if (number === 2) {
+        document.querySelector("#desc2").classList.remove("showText");
+        document.querySelector("#desc2").classList.add("hideText");
+      } else {
+        document.querySelector("#desc3").classList.remove("showText");
+        document.querySelector("#desc3").classList.add("hideText");
+      }
+    }
+
+    function alertText(number) {
+        alert(`${number}번째 석봉이 표정>.<귀여워죽게써 :)`);
+    }
+
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="photos">
-            <div id="img1" class="photo-frame">
+            <div id="img1" class="photo-frame" onmouseover="hideText(1)"
+                 onmouseout="showText(1)"
+                 onclick="alertText(1)">
                 <span id="desc1" class="photo-description">
                     첫번째 이미지 설명
                 </span>
             </div>
-            <div id="img2" class="photo-frame">
+            <div id="img2" class="photo-frame" 	onmouseover="hideText(2)"
+                 onmouseout="showText(2)"
+                 onclick="alertText(2)">
                 <span id="desc2" class="photo-description">
                     두번째 이미지 설명
                 </span>
             </div>
-            <div id="img3" class="photo-frame">
+            <div id="img3" class="photo-frame" 	onmouseover="hideText(3)"
+                 onmouseout="showText(3)"
+                 onclick="alertText(3)" >
                 <span id="desc3" class="photo-description">
                     세번째 이미지 설명
                 </span>
             </div>
-            <div id="img4" class="photo-frame">
+            <div id="img4" class="photo-frame" >
                 <span id="desc4" class="photo-description">
                     네번째 이미지 설명
                 </span>
