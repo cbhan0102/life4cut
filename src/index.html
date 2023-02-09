@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>귀여운 묘생4컷</title>
     <style>
       @font-face {
         font-family: "LeeSeoyun";
@@ -14,34 +14,112 @@
         font-weight: normal;
         font-style: normal;
       }
+
+        /* body태그 자체에 css 요소 부여 */
+        body {
+            font-family: "LeeSeoyun";
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-image: url("../img/background.png");
+        }
+
+        .container {
+        width: 390px;
+        background-color: #92b8b1;
+        height: 100%;
+        }
+
+        .photos {
+            margin-top: 30px;
+        }
+
+        .photo-frame {
+            background-color: white;
+            margin: 15px 20px;
+            height: 200px;
+            background-size: 350px;
+            position: relative;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .f-title {
+            font-size: 25px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .f-date {
+            font-size: 15px;
+            font-weight: 500;
+            color: white;
+        }
+
+        #img1 {
+            background-image: url("../img/img1.jpeg");
+        }
+
+        #img2 {
+            background-image: url("../img/img2.jpeg");
+        }
+
+        #img3 {
+            background-image: url("../img/img3.jpeg");
+        }
+
+        #img4 {
+            background-image: url("../img/img4.jpeg");
+        }
+
+        .photo-description {
+        color: white;
+        background-color: black;
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%);
+        left: 50%;
+
+
+        width: fit-content;
+        padding: 0 20px;
+        margin-bottom: 10px;
+
+        border-radius: 10px;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="photos">
             <div id="img1" class="photo-frame">
-                <span id="desc1" class="photo_description">
+                <span id="desc1" class="photo-description">
                     첫번째 이미지 설명
                 </span>
             </div>
             <div id="img2" class="photo-frame">
-                <span id="desc2" class="photo_description">
+                <span id="desc2" class="photo-description">
                     두번째 이미지 설명
                 </span>
             </div>
             <div id="img3" class="photo-frame">
-                <span id="desc3" class="photo_description">
+                <span id="desc3" class="photo-description">
                     세번째 이미지 설명
                 </span>
             </div>
             <div id="img4" class="photo-frame">
-                <span id="desc4" class="photo_description">
+                <span id="desc4" class="photo-description">
                     네번째 이미지 설명
                 </span>
             </div>
         </div>
         <div class="footer">
-            <p class="f-title">Be happy every day</p>
+            <p class="f-title">Be happy every day:)</p>
             <p class="f-date">2023.02.09</p>
         </div>
     </div>
