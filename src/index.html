@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,13 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>귀여운 묘생4컷</title>
     <style>
-      @font-face {
-        font-family: "LeeSeoyun";
-        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
-          format("woff");
-        font-weight: normal;
-        font-style: normal;
-      }
+        @font-face {
+            font-family: "LeeSeoyun";
+            src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
 
         /* body태그 자체에 css 요소 부여 */
         body {
@@ -21,13 +21,13 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            background-image: url("../img/background.png");
+            background-image: url("../src/img/background.png");
         }
 
         .container {
-        width: 390px;
-        background-color: #92b8b1;
-        height: 100%;
+            width: 390px;
+            background-color: #92b8b1;
+            height: 100%;
         }
 
         .photos {
@@ -62,106 +62,121 @@
         }
 
         #img1 {
-            background-image: url("../img/img1.jpeg");
+            background-image: url("../src/img/img1.jpeg");
         }
 
         #img2 {
-            background-image: url("../img/img2.jpeg");
+            background-image: url("../src/img/img2.jpeg");
         }
 
         #img3 {
-            background-image: url("../img/img3.jpeg");
+            background-image: url("../src/img/img3.jpeg");
         }
 
         #img4 {
-            background-image: url("../img/img4.jpeg");
+            background-image: url("../src/img/img4.jpeg");
         }
 
         .photo-description {
-        color: white;
-        background-color: black;
-        position: absolute;
-        bottom: 0;
-        transform: translate(-50%);
-        left: 50%;
-        opacity: 0;
+            color: white;
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            transform: translate(-50%);
+            left: 50%;
+            width: fit-content;
+            padding: 0 20px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
 
-        width: fit-content;
-        padding: 0 20px;
-        margin-bottom: 10px;
+        /* opacity : 투명도를 의미해요! 0% 투명하다. 즉 다 보인다. */
+        .showText {
+            opacity: 0;
+        }
 
-        border-radius: 10px;
+        /* opacity : 투명도를 의미! 100% 투명하다. 즉 안보인다. */
+        /* transition : 나타날 때 0.5초동안 천천히 나타나는 효과를 줌 */
+        .hideText {
+            opacity: 1;
+            transition: opacity 0.5s linear;
         }
 
     </style>
     <script>
 
-    function showText(number) {
-      if (number === 1) {
-        document.querySelector("#desc1").classList.remove("hideText");
-        document.querySelector("#desc1").classList.add("showText");
-      } else if (number === 2) {
-        document.querySelector("#desc2").classList.remove("hideText");
-        document.querySelector("#desc2").classList.add("showText");
-      } else {
-        document.querySelector("#desc3").classList.remove("hideText");
-        document.querySelector("#desc3").classList.add("showText");
-      }
-    }
+        function showText(number) {
+            if (number === 1) {
+                document.querySelector("#desc1").classList.remove("hideText");
+                document.querySelector("#desc1").classList.add("showText");
+            } else if (number === 2) {
+                document.querySelector("#desc2").classList.remove("hideText");
+                document.querySelector("#desc2").classList.add("showText");
+            } else if (number === 3) {
+                document.querySelector("#desc3").classList.remove("hideText");
+                document.querySelector("#desc3").classList.add("showText");
+            } else {
+                document.querySelector("#desc4").classList.remove("hideText");
+                document.querySelector("#desc4").classList.add("showText");
+            }
+        }
 
-    function hideText(number) {
-      if (number === 1) {
-        document.querySelector("#desc1").classList.remove("showText");
-        document.querySelector("#desc1").classList.add("hideText");
-      } else if (number === 2) {
-        document.querySelector("#desc2").classList.remove("showText");
-        document.querySelector("#desc2").classList.add("hideText");
-      } else {
-        document.querySelector("#desc3").classList.remove("showText");
-        document.querySelector("#desc3").classList.add("hideText");
-      }
-    }
+        function hideText(number) {
+            if (number === 1) {
+                document.querySelector("#desc1").classList.remove("showText");
+                document.querySelector("#desc1").classList.add("hideText");
+            } else if (number === 2) {
+                document.querySelector("#desc2").classList.remove("showText");
+                document.querySelector("#desc2").classList.add("hideText");
+            } else if (number === 3) {
+                document.querySelector("#desc3").classList.remove("showText");
+                document.querySelector("#desc3").classList.add("hideText");
+            } else {
+                document.querySelector("#desc4").classList.remove("showText");
+                document.querySelector("#desc4").classList.add("hideText");
+            }
+        }
 
-    function alertText(number) {
-        alert(`${number}번째 석봉이 표정>.<귀여워죽게써 :)`);
-    }
+        function alertText(number) {
+            alert(`${number}번째 석봉이 표정>.<귀여워죽게써 :)`);
+        }
 
     </script>
 </head>
+
 <body>
-    <div class="container">
-        <div class="photos">
-            <div id="img1" class="photo-frame" onmouseover="hideText(1)"
-                 onmouseout="showText(1)"
-                 onclick="alertText(1)">
+<div class="container">
+    <div class="photos">
+        <div id="img1" class="photo-frame" onmouseover="hideText(1)" onmouseout="showText(1)"
+             onclick="alertText(1)">
                 <span id="desc1" class="photo-description">
                     첫번째 이미지 설명
                 </span>
-            </div>
-            <div id="img2" class="photo-frame" 	onmouseover="hideText(2)"
-                 onmouseout="showText(2)"
-                 onclick="alertText(2)">
+        </div>
+        <div id="img2" class="photo-frame" onmouseover="hideText(2)" onmouseout="showText(2)"
+             onclick="alertText(2)">
                 <span id="desc2" class="photo-description">
                     두번째 이미지 설명
                 </span>
-            </div>
-            <div id="img3" class="photo-frame" 	onmouseover="hideText(3)"
-                 onmouseout="showText(3)"
-                 onclick="alertText(3)" >
+        </div>
+        <div id="img3" class="photo-frame" onmouseover="hideText(3)" onmouseout="showText(3)"
+             onclick="alertText(3)">
                 <span id="desc3" class="photo-description">
                     세번째 이미지 설명
                 </span>
-            </div>
-            <div id="img4" class="photo-frame" >
+        </div>
+        <div id="img4" class="photo-frame" onmouseover="hideText(4)" onmouseout="showText(4)"
+             onclick="alertText(4)">
                 <span id="desc4" class="photo-description">
                     네번째 이미지 설명
                 </span>
-            </div>
-        </div>
-        <div class="footer">
-            <p class="f-title">Be happy every day:)</p>
-            <p class="f-date">2023.02.09</p>
         </div>
     </div>
+    <div class="footer">
+        <p class="f-title">Be happy every day:)</p>
+        <p class="f-date">2023.02.09</p>
+    </div>
+</div>
 </body>
+
 </html>
